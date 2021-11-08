@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+
+{% block content %}
+{% if current_user.is_authenticated %}
+<h1 style="color:rgb(0, 128, 117)">You Logged sucessfully!!!😊</h1>
+{%else%}
+<h1 style="color:rgb(9, 0, 128)">Welcome User!!!😊</h1>
+<p style="text-align:center"><img src= "{{ url_for('static',filename='images/welcome.jpg')  }}" alt="flag" height="400" width="500"> </p>
+{% endif %}
+{% endblock %}

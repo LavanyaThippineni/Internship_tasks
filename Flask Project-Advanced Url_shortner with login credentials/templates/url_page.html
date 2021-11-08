@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}shorten URL{% endblock %}
+
+{% block content %}
+<form action="#", method="post">
+    <label for="url">Enter an https:// URL:</label>
+    <input type="url" name="nm" id="url"
+       placeholder="https://example.com"
+       pattern="https://.*" size="50"
+       required>
+    <br>
+    <input type="submit" value="shorten" class="btn btn-primary">    
+<p style="text-align:center"><img src= "{{ url_for('static',filename='images/url.jpg')  }}" alt="flag" height="300" width="800" class="center"></p>
+
+</form>
+{% endblock %}

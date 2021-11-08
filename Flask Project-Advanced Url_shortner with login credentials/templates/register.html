@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Register
+{% endblock %}
+
+
+{% block content %}
+<h2 style="color:rebeccapurple">Dear User!! Please Enter the details to Register  </h2>
+<img src= "{{ url_for('static',filename='images/register.jpg')  }}" alt="flag" height="300" width="1300"> 
+<form action="{{ url_for("register")}}" method="post">
+    <label for="username" style="color:black">Username:</label>
+    <input type="text" name="username" placeholder="Enter your Name"size="20" /><br/><br/>
+    <label for="email" style="color:black">Email:</label>
+    <input type="text" name="email" placeholder="Email" size="30" /><br/><br/>
+    <label for="password" style="color:black">Password:</label>
+    <input type="password" name="password" placeholder="Password" size="15" /><br/><br/>
+    <label for="confirm_password" style="color:black">Confirm Password:</label>
+    <input type="password" name="confirm_password" placeholder="Re-Enter password" size="15" /><br/><br/>
+
+    <button style="color: rgb(65, 166, 225)">Register</button>
+</form>
+{%if wrong_pssd%}
+    {{wrong_pssd}}
+{%endif%}
+
+{% endblock %}
